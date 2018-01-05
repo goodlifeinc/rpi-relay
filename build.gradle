@@ -1,0 +1,35 @@
+buildscript {
+	ext {
+		springBootVersion = '1.5.9.RELEASE'
+	}
+	repositories {
+		mavenCentral()
+	}
+	dependencies {
+		classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+	}
+}
+
+apply plugin: 'java'
+apply plugin: 'eclipse'
+apply plugin: 'org.springframework.boot'
+
+group = 'com.evgeni'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = 1.8
+
+repositories {
+	mavenCentral()
+}
+
+
+dependencies {
+	compile('org.springframework.boot:spring-boot-starter-web')
+	// https://mvnrepository.com/artifact/com.pi4j/pi4j-core
+	compile group: 'com.pi4j', name: 'pi4j-core', version: '1.1'
+	// https://mvnrepository.com/artifact/com.pi4j/pi4j-gpio-extension
+	compile group: 'com.pi4j', name: 'pi4j-gpio-extension', version: '1.1'
+	// https://mvnrepository.com/artifact/com.pi4j/pi4j-device
+	compile group: 'com.pi4j', name: 'pi4j-device', version: '1.1'
+	testCompile('org.springframework.boot:spring-boot-starter-test')
+}
