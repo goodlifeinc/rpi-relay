@@ -33,5 +33,6 @@ dependencies {
 	compile group: 'com.pi4j', name: 'pi4j-gpio-extension', version: '1.2-SNAPSHOT'
 	// https://mvnrepository.com/artifact/com.pi4j/pi4j-device
 	compile group: 'com.pi4j', name: 'pi4j-device', version: '1.2-SNAPSHOT'
+	compile('com.google.firebase:firebase-admin:6.7.0')
 	testCompile('org.springframework.boot:spring-boot-starter-test')
 }

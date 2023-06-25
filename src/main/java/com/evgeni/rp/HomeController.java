@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 public class HomeController {
-    Logger logger = LoggerFactory.getLogger(this.getClass());
+    private final Logger logger = LoggerFactory.getLogger(this.getClass());
 
     @Autowired
     private PiController piController;
@@ -33,6 +33,7 @@ public class HomeController {
     @RequestMapping(path = "temp")
     public ResponseEntity<String> getTemp() {
         logger.info("temperature endpoint hit");
-        return new ResponseEntity<>(piController.getTemperature(), HttpStatus.OK);
+        String temp = piController.getTemperature();
+        return new ResponseEntity<>(temp, HttpStatus.OK);
     }
 }
